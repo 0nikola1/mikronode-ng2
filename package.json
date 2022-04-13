@@ -7,17 +7,21 @@
     {
       "name": "George Joseph",
       "email": "george.joseph@fairview5.com"
+    },
+    {
+      "name": "Nikola Bobetic",
+      "email": "nikgit@bobetic.com"
     }
   ],
-  "homepage": "http://f5eng.github.io/mikronode-ng",
+  "homepage": "https://0nikola1.github.io/mikronode-ng2/",
   "license": "MIT",
   "keywords": [
     "mikrotik",
     "socket",
     "api"
   ],
-  "repository": "git://github.com/f5eng/mikronode-ng",
-  "bugs": "https://github.com/f5eng/mikronode-ng/issues",
+  "repository": "git://github.com/0nikola1/mikronode-ng2",
+  "bugs": "https://github.com/0nikola1/mikronode-ng2/issues",
   "main": "lib/index",
   "engines": {
     "node": ">= 0.10.36"

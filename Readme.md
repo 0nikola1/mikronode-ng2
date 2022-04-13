@@ -2,7 +2,7 @@
       
   Full-Featured asynchronous Mikrotik API interface for [NodeJS](http://nodejs.org).
   
-		var MikroNode = require('mikronode-ng');
+		var MikroNode = require('mikronode-ng2');
 
 		var connection = MikroNode.getConnection(process.argv[2], process.argv[3], process.argv[4]);
 		connection.connect(function(conn) {
@@ -44,7 +44,7 @@
 
   Clone this repository into your node_modules directory.
   - or -
-     $ npm install mikronode-ng
+     $ npm install mikronode-ng2
 
 
 ## Features
@@ -62,7 +62,7 @@
 
 There are 2 changes that will need to be made...
 	
-	var MikroNode = require('mikronode-ng');			
+	var MikroNode = require('mikronode-ng2');			
 	
 	// From	
 			var connection = new MikroNode(...)
@@ -97,7 +97,7 @@ set the global symbols.
 
 	global.WeakMap = require('some-weakmap-polyfill').WeakMap;
 	global.Promise = require('some-promise-polyfill').Promise;
-	var MikroNode = require('mikronode-ng');
+	var MikroNode = require('mikronode-ng2');
 
 
 ## Tests
@@ -110,7 +110,7 @@ Promises and listens/cancels.
 
 ### Connect to a Mikrotik, and add an address to ether1
 
-	var MikroNode = require('mikronode-ng');
+	var MikroNode = require('mikronode-ng2');
 	
 	var connection = MikroNode.getConnection('192.168.88.1','admin','password');
 	connection.closeOnDone = true;
@@ -131,7 +131,7 @@ Promises and listens/cancels.
 ### Writing the program for the example API conversation on the [Mikrotik Wiki](http://wiki.mikrotik.com/wiki/API#.2Fcancel.2C_simultaneous_commands)
 DON'T RUN THIS IF YOU'RE CONNECTED VIA ether1! :)
 
-     var MikroNode = require('mikronode-ng');
+     var MikroNode = require('mikronode-ng2');
      var connection = MikroNode.getConnection('192.168.88.1','admin','password');
 	
      connection.connect(function(conn) {
@@ -174,7 +174,7 @@ DON'T RUN THIS IF YOU'RE CONNECTED VIA ether1! :)
 DON'T RUN THIS IF YOU'RE CONNECTED VIA ether1! :)
   Notice how the callback embedding is not needed using the syncronous capability.
 
-     var MikroNode = require('mikronode-ng');
+     var MikroNode = require('mikronode-ng2');
 
      var connection = MikroNode.getConnection('192.168.88.1','admin','password');
      connection.connect(function(conn) {
@@ -210,7 +210,7 @@ DON'T RUN THIS IF YOU'RE CONNECTED VIA ether1! :)
 	// the following line
 	//require('es6-promise').polyfill();
 	// or globally export Promise from your favorite ES6 compatable Promise library.  
-	var MikroNode = require('mikronode-ng');
+	var MikroNode = require('mikronode-ng2');
      
 	var connection = MikroNode.getConnection(process.argv[2], process.argv[3], process.argv[4], {
 		closeOnDone : true

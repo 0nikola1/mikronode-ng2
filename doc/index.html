@@ -43,9 +43,9 @@
     </div>
     <ul class="list">
     
-        <li class="item" data-name="mikronode-ng">
+        <li class="item" data-name="mikronode-ng2">
             <span class="title">
-                <a href="mikronode-ng.html">mikronode-ng</a>
+                <a href="mikronode-ng.html">mikronode-ng2</a>
                 
                 <span class="static">static</span>
                 
@@ -278,7 +278,7 @@
 
     <section>
         <article class="readme"><h1>MikroNode</h1><p>  Full-Featured asynchronous Mikrotik API interface for <a href="http://nodejs.org">NodeJS</a>.</p>
-<pre class="prettyprint source"><code>    var MikroNode = require('mikronode-ng');
+<pre class="prettyprint source"><code>    var MikroNode = require('mikronode-ng2');
 
     var connection = MikroNode.getConnection(process.argv[2], process.argv[3], process.argv[4]);
     connection.connect(function(conn) {
@@ -316,7 +316,7 @@ connection.getConnectPromise().then(function(conn) {
     });
 });</code></pre><h2>Installation</h2><p>  Clone this repository into your node_modules directory.</p>
 <ul>
-<li>or -<br> $ npm install mikronode-ng</li>
+<li>or -<br> $ npm install mikronode-ng2</li>
 </ul>
 <h2>Features</h2><ul>
 <li>Channel based communication</li>
@@ -329,7 +329,7 @@ connection.getConnectPromise().then(function(conn) {
 <li>TLS Support</li>
 </ul>
 <h2>Upgrading from versions &lt; 1.0.0</h2><p>There are 2 changes that will need to be made...</p>
-<pre class="prettyprint source"><code>var MikroNode = require('mikronode-ng');            
+<pre class="prettyprint source"><code>var MikroNode = require('mikronode-ng2');            
 
 // From    
         var connection = new MikroNode(...)
@@ -351,9 +351,9 @@ connection.getConnectPromise().then(function(conn) {
 <h2>Notes for Node &lt; 4.0.0</h2><p>MikroNode requires 2 ES6 features that appeared in Node 4.0.0: Promises and WeakMaps.  If<br>you're running an earlier version of Node and MikroNode can't find those symbols, it will<br>attempt to load them from the 'es6-promise' and 'weakmap' packages respectively.  If you wish<br>to use other packages to supply those symbols, require them before requiring mikronode and<br>set the global symbols.</p>
 <pre class="prettyprint source"><code>global.WeakMap = require('some-weakmap-polyfill').WeakMap;
 global.Promise = require('some-promise-polyfill').Promise;
-var MikroNode = require('mikronode-ng');</code></pre><h2>Tests</h2><p>The <a href="test/">test</a> directory contains a test that exercises all functionality including<br>Promises and listens/cancels.</p>
+var MikroNode = require('mikronode-ng2');</code></pre><h2>Tests</h2><p>The <a href="test/">test</a> directory contains a test that exercises all functionality including<br>Promises and listens/cancels.</p>
 <h2>Examples</h2><p><a href="examples/">Examples (including Promise examples)</a></p>
-<h3>Connect to a Mikrotik, and add an address to ether1</h3><pre class="prettyprint source"><code>var MikroNode = require('mikronode-ng');
+<h3>Connect to a Mikrotik, and add an address to ether1</h3><pre class="prettyprint source"><code>var MikroNode = require('mikronode-ng2');
 
 var connection = MikroNode.getConnection('192.168.88.1','admin','password');
 connection.closeOnDone = true;
@@ -370,7 +370,7 @@ connection.connect(function(conn) {
        });
     });
  });</code></pre><h3>Writing the program for the example API conversation on the <a href="http://wiki.mikrotik.com/wiki/API#.2Fcancel.2C_simultaneous_commands">Mikrotik Wiki</a></h3><p>DON'T RUN THIS IF YOU'RE CONNECTED VIA ether1! :)</p>
-<pre class="prettyprint source"><code> var MikroNode = require('mikronode-ng');
+<pre class="prettyprint source"><code> var MikroNode = require('mikronode-ng2');
  var connection = MikroNode.getConnection('192.168.88.1','admin','password');
 
  connection.connect(function(conn) {
@@ -408,7 +408,7 @@ connection.connect(function(conn) {
        });
     });
  });</code></pre><h3>Simplifying the above by reducing the number of channels.</h3><p>DON'T RUN THIS IF YOU'RE CONNECTED VIA ether1! :)<br>  Notice how the callback embedding is not needed using the syncronous capability.</p>
-<pre class="prettyprint source"><code> var MikroNode = require('mikronode-ng');
+<pre class="prettyprint source"><code> var MikroNode = require('mikronode-ng2');
 
  var connection = MikroNode.getConnection('192.168.88.1','admin','password');
  connection.connect(function(conn) {
@@ -440,7 +440,7 @@ connection.connect(function(conn) {
 // the following line
 //require('es6-promise').polyfill();
 // or globally export Promise from your favorite ES6 compatable Promise library.  
-var MikroNode = require('mikronode-ng');
+var MikroNode = require('mikronode-ng2');
 
 var connection = MikroNode.getConnection(process.argv[2], process.argv[3], process.argv[4], {
     closeOnDone : true
